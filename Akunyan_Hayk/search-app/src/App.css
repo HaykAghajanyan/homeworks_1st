@@ -35,7 +35,7 @@
   width: 90vw;
   height: 90vh;
   padding: 50px;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
   background: rgba(255, 255, 255, .05);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
   backdrop-filter: blur(4px);

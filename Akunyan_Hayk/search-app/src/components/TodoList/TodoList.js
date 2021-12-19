@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 
 class TodoList extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             todos: [],
+            filteredTodos: [],
             search: ''
         };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.search !== prevState.search || this.state.todos.length !== prevState.todos.length) {
+            this.filterData()
+        }
     }
 
     updateSearch = (e) => {
@@ -17,16 +24,22 @@ class TodoList extends Component {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then((response) => response.json())
             .then(todosList => {
-                let filteredTodosList = todosList.filter((todoItem, index) => index < 20);
-                this.setState({ todos: filteredTodosList });
+                // let filteredTodosList = todosList.filter((todoItem, index) => index < 20);
+                this.setState({ todos: todosList });
             });
     }
 
-    render() {
-        let filteredTodos = this.state.todos.filter((todo) => {
-            return todo.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
-        });
+    filterData = () => {
+        const {todos, search} = this.state
 
+        let filteredTodos = todos.filter((todo) => {
+            return todo.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        });
+        this.setState({filteredTodos})
+    }
+
+    render() {
+        const {filteredTodos, search} = this.state
         return (
             <>
                 <button className={`App-load-btn`} onClick={this.fetchTodos}>
@@ -37,19 +50,16 @@ class TodoList extends Component {
                     <input
                         className={`App-search-input`}
                         type="text"
-                        value={this.state.search}
+                        value={search}
                         onChange={this.updateSearch}
                         placeholder={`Search Todos`}
                     />
                 </div>
-
-                {this.state.todos.length > 0 && (
-                    <ul className={`App-todo-list`}>
-                        {filteredTodos.map((todo) => (
-                            <li className={`App-todo-list-item`} key={todo.id}>{todo.title}</li>
-                        ))}
-                    </ul>
-                )}
+                <ul className={`App-todo-list`}>
+                    {filteredTodos.map((todo) => (
+                        <li className={`App-todo-list-item`} key={todo.id}>{todo.title}</li>
+                    ))}
+                </ul>
             </>
         )
     }
