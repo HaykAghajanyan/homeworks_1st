@@ -1,18 +1,19 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
-export default class Search extends Component {
-  render() {
-    let searchQuery = this.props.searchQuery;
-    let onInputChange = this.props.onInputChange;
-    return (
-      <div className="search">
-        <input
-          onChange={onInputChange}
-          value={searchQuery}
-          type="search"
-          placeholder="Search"
-        />
-      </div>
-    );
-  }
+class Search extends Component {
+    render() {
+        const {searchQuery, onInputChange} = this.props
+        return (
+            <div className="search">
+                <input
+                    onChange={onInputChange}
+                    value={searchQuery}
+                    type="search"
+                    placeholder="Search"
+                />
+            </div>
+        );
+    }
 }
+
+export default React.memo(Search)

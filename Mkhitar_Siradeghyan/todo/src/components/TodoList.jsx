@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 export default class TodoList extends Component {
   render() {
-    let posts = this.props.posts;
+    const {posts} = this.props;
 
     return (
       <div className="todoList">
