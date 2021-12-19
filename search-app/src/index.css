@@ -1,0 +1,74 @@
+body {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(227, 230, 241);
+  }
+  #remover{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+  #remover:hover {
+    background-color: rgb(223, 0, 0);
+  }
+  li {
+    height: 40px;
+    width: 600px;
+    background-color: rgb(248, 248, 248);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: show 2s ease;
+  }
+  @keyframes show {
+    0% {
+        opacity: 0;
+        margin-top: 40px;
+    } 
+    100% {
+        opacity: 1;
+        margin-top: 0px;     
+    }
+  }
+  li:hover {
+    background-color: #e2e2e2;
+    color: white;
+  }
+  .clicked {
+    background-color: rgb(75,174,79);
+    color: white
+  }
+  .clicked:hover {
+    background-color: rgb(129, 199, 132);
+    color: white
+  }
+  li > span {
+    display: flex;
+    align-items: center;
+  }
+  div > input {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    background-color: white;
+    background-image: url('search.png');
+    background-position: 7px 7px; 
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 40px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  }
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
