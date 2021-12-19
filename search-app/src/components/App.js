@@ -6,6 +6,7 @@ class App extends Component{
         super(props);
         this.state = {
             dataList: [],
+            filteredData: [],
             searchText: ""
         }
     }
@@ -13,14 +14,20 @@ class App extends Component{
     componentDidMount() {
         fetch(`https://jsonplaceholder.typicode.com/todos`)
         .then(response => response.json())
-        .then(data => { 
+        .then(data => {
             this.setState({dataList: data})
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.searchText !== prevState.searchText) {
+            this.searchFunction()
+        }
+    }
+
     removeItem = (id) => {
-        let index = this.state.dataList.findIndex(el => el.id === id)
-        this.setState({dataList: [...this.state.dataList.slice(0,index), ...this.state.dataList.slice(index+1)]})
+        let index = this.state.filteredData.findIndex(el => el.id === id)
+        this.setState({filteredData: [...this.state.filteredData.slice(0,index), ...this.state.filteredData.slice(index+1)]})
     }
 
     changeSearchText = (evt) => {
@@ -28,16 +35,19 @@ class App extends Component{
     }
 
     searchFunction = () => {
-        return this.state.dataList.filter(item => item.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+        const {dataList, searchText} = this.state
+        const filteredData = dataList.filter(item => item.title.toLowerCase().includes(searchText.toLowerCase()))
+        this.setState({filteredData})
     }
-    
+
     render() {
+        const {filteredData, searchText} = this.state
         return (
-            <> 
+            <>
                 <div>
-                    { <input id="searchInput" type="text" value={this.state.searchText} onChange={this.changeSearchText}/> }
+                    { <input id="searchInput" type="text" value={searchText} onChange={this.changeSearchText}/> }
                 </div>
-                <UlContainer data={this.searchFunction()} remove={this.removeItem}/>
+                <UlContainer data={filteredData} remove={this.removeItem}/>
             </>
         )
     }

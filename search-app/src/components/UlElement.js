@@ -1,4 +1,4 @@
-import {Component} from "react";
+import {Component, memo} from "react";
 import  ListItem from "./ListItem";
 
 class UlContainer extends Component{
@@ -11,4 +11,4 @@ class UlContainer extends Component{
             </>
     )}
 }
-export default UlContainer;
+export default memo(UlContainer);
