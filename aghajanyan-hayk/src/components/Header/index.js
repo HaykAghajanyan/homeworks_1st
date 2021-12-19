@@ -24,23 +24,48 @@ class Header extends Component{
     }
 }
 
-const Header1 = ({color, user}) => {
-    useEffect(() => {
-        document.addEventListener('click', clickListener)
-        return () => {
-            document.removeEventListener('click', clickListener)
-        }
-    }, [])
+// const Header2 = ({color, user}) => {
+//     useEffect(() => {
+//         document.addEventListener('click', clickListener)
+//         return () => {
+//             document.removeEventListener('click', clickListener)
+//         }
+//     },[])
+//
+//     const clickListener = e => {
+//         console.log('Have I clicked on the header ? ', e.target.localName === 'header')
+//     }
+//
+//     return (
+//         // <header className='header' style={{backgroundColor: color}}>
+//         //     Header {user.name}
+//         // </header>
+//         <header className='header' style={{backgroundColor: color}}>
+//             <div>
+//                 Header {user.name}
+//             </div>
+//         </header>
+//     )
+// }
 
-    const clickListener = (e) => {
-        console.log('Have I clicked on the header ? ', e.target.localName === 'header')
-    }
+// const Header1 = ({color, user}) => {
+//     useEffect(() => {
+//         document.addEventListener('click', clickListener)
+//         return () => {
+//             document.removeEventListener('click', clickListener)
+//         }
+//     }, [])
+//
+//     const clickListener = (e) => {
+//         console.log('Have I clicked on the header ? ', e.target.localName === 'header')
+//     }
+//
+//     return (
+//         <header className='header' style={{backgroundColor: color}}>
+//             Header {user.name}
+//         </header>
+//     )
+// }
 
-    return (
-        <header className='header' style={{backgroundColor: color}}>
-            Header {user.name}
-        </header>
-    )
-}
+export default memo(Header)
 
-export default memo(Header1)
