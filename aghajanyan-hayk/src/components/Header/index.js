@@ -1,28 +1,48 @@
-import {Component, memo, useEffect} from "react";
+import { memo} from "react";
+import {NavLink} from "react-router-dom";
 
-class Header extends Component{
-    clickListener = (e) => {
-        console.log('Have I clicked on the header ? ', e.target.localName === 'header')
-    }
 
-    componentDidMount() {
-        document.addEventListener('click', this.clickListener)
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('click', this.clickListener)
-    }
-
-    render() {
-        const {color, user} = this.props
-
-        return (
-            <header className='header' style={{backgroundColor: color}}>
-                Header {user.name}
-            </header>
-        )
-    }
+const Header = () => {
+    return (
+        <header className='header'>
+            <NavLink className='navLink' to='/'>Messages</NavLink>
+            <NavLink className='navLink' to='/config'>Config</NavLink>
+        </header>
+    )
 }
+
+export default memo(Header)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const Header2 = ({color, user}) => {
 //     useEffect(() => {
@@ -47,7 +67,7 @@ class Header extends Component{
 //         </header>
 //     )
 // }
-
+//
 // const Header1 = ({color, user}) => {
 //     useEffect(() => {
 //         document.addEventListener('click', clickListener)
@@ -66,6 +86,4 @@ class Header extends Component{
 //         </header>
 //     )
 // }
-
-export default memo(Header)
 

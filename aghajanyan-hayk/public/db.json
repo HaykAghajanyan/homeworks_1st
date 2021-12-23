@@ -1,0 +1,78 @@
+{
+  "messages": [
+    {
+      "id": "1",
+      "name": "Alex",
+      "date": "17/05/2021",
+      "text": "Hello Hayk",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "2",
+      "name": "Hayk",
+      "date": "21/03/2020",
+      "text": "I`ll be late today",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "3",
+      "name": "Karen",
+      "date": "13/09/2021",
+      "text": "asdasdasdaasddd",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "4",
+      "name": "Alex",
+      "date": "17/05/2021",
+      "text": "mmmmmmmmmmmmmmmm",
+      "textColor": "black",
+      "nameColor": "black"
+
+    },
+    {
+      "id": "5",
+      "name": "Hayk",
+      "date": "21/03/2020",
+      "text": "klklklklklklklklklklk",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "6",
+      "name": "Karen",
+      "date": "13/09/2021",
+      "text": "asdasdasdaasddd",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "7",
+      "name": "Alex",
+      "date": "17/05/2021",
+      "text": "mmmmmmmmmmmmmmmm",
+      "textColor": "black",
+      "nameColor": "black"
+
+    },
+    {
+      "id": "8",
+      "name": "Hayk",
+      "date": "21/03/2020",
+      "text": "klklklklklklklklklklk",
+      "textColor": "black",
+      "nameColor": "black"
+    },
+    {
+      "id": "9",
+      "name": "Karen",
+      "date": "13/09/2021",
+      "text": "asdasdasdaasddd",
+      "textColor": "black",
+      "nameColor": "black"
+    }
+  ]
+}

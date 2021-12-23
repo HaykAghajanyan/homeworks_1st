@@ -14,15 +14,17 @@ code {
 
 .header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   border-bottom: 1px black solid;
   height: 10vh;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin-top: 100px;
+  box-sizing: border-box;
 }
 
 .circle {
@@ -31,4 +33,55 @@ code {
   border-radius: 50%;
   text-align: center;
   align-items: center;
+}
+
+.navLink {
+  color: #fff;
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 2px 4px 2px;
+  height: 25px;
+  text-decoration: none;
+}
+
+.active {
+  color: black;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 40%;
+  margin: 20px auto;
+}
+
+.message-input {
+  width: 30%;
+  margin: 10px auto;
+}
+
+.message-search {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.config-container {
+  display: flex;
+  max-width: 800px;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
