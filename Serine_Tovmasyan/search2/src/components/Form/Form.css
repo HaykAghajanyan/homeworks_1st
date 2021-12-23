@@ -1,0 +1,22 @@
+form {
+    min-width: 50%;
+    display: flex;
+}
+
+input {
+    color: rgb(42, 42, 42);
+    width: 100%;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    background-image: none;
+    background-color: rgb(221, 5, 5);
+    color: white;
+    letter-spacing: 1px;
+    transition: all 0.1s linear 0s;
+    padding: 1rem 1.5rem;
+}
